@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11110f">
+  <title>tracklist</title>
+  <link rel="stylesheet" href="https://use.typekit.net/daz1mij.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="site-shell home-shell">
+    <header class="topbar">
+      <a class="wordmark" href="index.html" aria-label="Track That Album home">
+        <span class="wordmark-icon" aria-hidden="true">TtA</span>
+        <span>track<span class="wordmark-light">list</span></span>
+      </a>
+      <span class="topbar-note"><span class="live-dot"></span>Pick your next challenge</span>
+    </header>
+
+    <main class="home-layout">
+      <section class="home-hero" aria-labelledby="home-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span>The hub of music trivia.</div>
+        <h1 id="home-title">What's that Sound?<span>You tell me!</span></h1>
+        <p class="intro">Choose from the available quizzes to test your music knowledge.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="quiz.html">Featured Album Quiz<span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#quiz-library">Browse more quizzes</a>
+        </div>
+      </section>
+
+      <section id="quiz-library" class="quiz-library" aria-label="Quiz library">
+        <article class="quiz-tile">
+          <div class="quiz-tile-badge">Featured</div>
+          <h2>Track That Album</h2>
+          <p>Can you guess some of the creator's albums from a few obscure hints?</p>
+          <a class="quiz-link" href="quiz.html">Open quiz</a>
+        </article>
+
+        <article class="quiz-tile quiz-tile-locked" aria-label="More quizzes coming soon">
+          <div class="quiz-tile-badge">Coming soon</div>
+          <h2>More quizzes</h2>
+          <p>There’s space here for the next music challenge to drop in when it’s ready.</p>
+          <span class="quiz-link disabled">Soon</span>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

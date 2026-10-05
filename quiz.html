@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11110f">
+  <title>Track That Album</title>
+  <link rel="stylesheet" href="https://use.typekit.net/daz1mij.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="index.html" aria-label="Track That Album home">
+        <span class="wordmark-icon" aria-hidden="true">TtA</span>
+        <span>track<span class="wordmark-light">list</span></span>
+      </a>
+      <span class="topbar-note"><span class="live-dot"></span>Which sounds sound familiar?</span>
+    </header>
+
+    <main class="layout">
+      <section class="game-column" aria-labelledby="page-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span>Jump back into your favorites, this time obscured!</div>
+        <h1>Track That<br><span>Album.</span></h1>
+        <p class="intro">Guess the album title to reveal the art. How niche is your knowledge?</p>
+
+        <section class="game-card" aria-label="Album quiz">
+          <div id="start-screen" class="start-screen">
+            <div class="start-mark" aria-hidden="true">♪</div>
+            <p class="card-kicker">MORE QUIZZES COMING SOON!</p>
+            <h2>Ready to shuffle?</h2>
+            <p class="card-description">Enter a name for the leaderboard, then identify each album from its hint.</p>
+            <form id="start-form" class="start-form">
+              <label for="player-name">YOUR PLAYER NAME</label>
+              <div class="start-controls">
+                <input id="player-name" name="playerName" type="text" maxlength="20" autocomplete="nickname" placeholder="e.g. vinyl lover" required>
+                <button class="button button-primary" type="submit">Start quiz <span aria-hidden="true">→</span></button>
+              </div>
+            </form>
+          </div>
+
+          <div id="quiz-screen" class="quiz-screen" hidden>
+            <div class="quiz-meta">
+              <span id="question-count">TRACK 01 / 25</span>
+              <span class="score-chip"><span aria-hidden="true">✦</span> <span id="score">0</span> POINTS</span>
+            </div>
+            <div class="progress-track" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="25" aria-valuenow="0">
+              <span id="progress-bar"></span>
+            </div>
+            <div class="album-stage">
+              <div id="cover-frame" class="cover-frame" aria-live="polite">
+                <div id="cover-placeholder" class="cover-placeholder">
+                  <span class="cover-question" aria-hidden="true">?</span>
+                  <span class="cover-lock"><span aria-hidden="true">◈</span> COVER LOCKED</span>
+                </div>
+                <img id="album-cover" alt="" hidden>
+              </div>
+              <div class="clue-panel">
+                <p id="hint-label" class="card-kicker">HINT 1</p>
+                <p id="album-hint" class="album-hint" aria-live="polite"></p>
+                <div class="album-meta" aria-label="Album details">
+                  <span id="album-year" class="album-detail"></span>
+                  <span id="album-tracks" class="album-detail"></span>
+                  <span id="album-runtime" class="album-detail"></span>
+                </div>
+                <div class="answer-area">
+                  <form id="answer-form">
+                    <label for="album-answer">WHAT'S THE ALBUM CALLED?</label>
+                    <div class="answer-controls">
+                      <input id="album-answer" name="answer" type="text" placeholder="Type the album title…" autocomplete="off" required>
+                      <button id="submit-answer" class="button button-primary" type="submit">Guess</button>
+                    </div>
+                  </form>
+                  <p id="feedback" class="feedback" aria-live="polite"></p>
+                  <button id="next-question" class="button button-next" type="button" hidden>Next album <span aria-hidden="true">→</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="complete-screen" class="complete-screen" hidden>
+            <div class="complete-icon" aria-hidden="true">✓</div>
+            <p class="card-kicker">RE-SHUFFLE?</p>
+            <h2>Quiz complete<span>.</span></h2>
+            <p id="completion-message" class="card-description"></p>
+            <div class="result-stats">
+              <div><strong id="final-score">0/250</strong><span>POINTS</span></div>
+              <div><strong id="final-time">0:00</strong><span>TIME</span></div>
+            </div>
+            <button id="play-again" class="button button-primary" type="button">Play again <span aria-hidden="true">↻</span></button>
+          </div>
+        </section>
+
+        <p class="footnote"><span aria-hidden="true">♫</span>Made for and by the music lovers who read the liner notes, see the interviews, and watch the culture.</p>
+      </section>
+
+      <aside class="leaderboard" aria-labelledby="leaderboard-title">
+        <div class="leaderboard-heading">
+          <div>
+            <p class="card-kicker">Track That Album Wrapped</p>
+            <h2 id="leaderboard-title">TOP LISTENERS</h2>
+          </div>
+          <span class="trophy" aria-hidden="true">💿</span>
+        </div>
+        <p class="leaderboard-caption">Best scores on this device</p>
+        <ol id="leaderboard-list" class="leaderboard-list"></ol>
+        <p id="leaderboard-empty" class="leaderboard-empty">See who also listens to way too much music.<br>Finish a quiz to get your wrapped.</p>
+        <div class="leaderboard-rule"></div>
+        <p class="leaderboard-footnote"><span aria-hidden="true">↗</span> Scores are saved in this browser.</p>
+      </aside>
+    </main>
+  </div>
+  <div id="completion-toast" class="completion-toast" role="status" aria-live="polite" hidden>
+    <span class="toast-check" aria-hidden="true">✓</span>
+    <span><strong>Playlist completed!</strong><br>Check the leaderboard to see your score.</span>
+  </div>
+</body>
+</html>
